@@ -49,6 +49,11 @@ func main() {
 	}
 
 	decryptedKeys, err := decryptKeys(encryptedKeys, recoveryCode)
+	sayBlock(`
+		{yellow Decrypted Private Keys}
+	`)
+	fmt.Println(decryptedKeys[0].Key)
+	fmt.Println(decryptedKeys[1].Key)
 	if err != nil {
 		exitWithError(err)
 	}
